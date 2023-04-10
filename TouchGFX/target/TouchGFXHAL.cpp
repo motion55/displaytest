@@ -264,6 +264,12 @@ void TouchGFXHAL::initialize()
     // Please note, HAL::initialize() must be called to initialize the framework.
 
     TouchGFXGeneratedHAL::initialize();
+
+    /* Display ON command */
+    __ST7789H2_WriteReg(ST7789V_DISPLAY_ON, (uint16_t*)NULL, 0);
+
+    /* Sleep Out command */
+    __ST7789H2_WriteReg(ST7789V_SLEEP_OUT, (uint16_t*)NULL, 0);
 }
 
 /**

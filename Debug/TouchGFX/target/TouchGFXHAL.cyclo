@@ -29,16 +29,16 @@ TouchGFXHAL.cpp:99:6:void __ST7789H2_ReadReg(uint16_t, uint8_t*, uint16_t)	2
 TouchGFXHAL.cpp:117:10:uint32_t __ST7789H2_GetOrientation()	1
 TouchGFXHAL.cpp:126:6:void __ST7789H2_SetDisplayWindow(uint16_t, uint16_t, uint16_t, uint16_t)	7
 TouchGFXHAL.cpp:258:6:virtual void TouchGFXHAL::initialize()	1
-TouchGFXHAL.cpp:274:11:virtual uint16_t* TouchGFXHAL::getTFTFrameBuffer() const	1
-TouchGFXHAL.cpp:289:6:virtual void TouchGFXHAL::setTFTFrameBuffer(uint16_t*)	1
-TouchGFXHAL.cpp:306:6:virtual void TouchGFXHAL::flushFrameBuffer(const touchgfx::Rect&)	1
-TouchGFXHAL.cpp:322:6:void TouchGFXHAL::copyFrameBufferBlockToLCD(touchgfx::Rect)	2
-TouchGFXHAL.cpp:351:6:virtual bool TouchGFXHAL::blockCopy(void*, const void*, uint32_t)	1
-TouchGFXHAL.cpp:360:6:virtual void TouchGFXHAL::configureInterrupts()	1
-TouchGFXHAL.cpp:373:6:virtual void TouchGFXHAL::enableInterrupts()	1
-TouchGFXHAL.cpp:386:6:virtual void TouchGFXHAL::disableInterrupts()	1
-TouchGFXHAL.cpp:400:6:virtual void TouchGFXHAL::enableLCDControllerInterrupt()	1
-TouchGFXHAL.cpp:410:6:virtual bool TouchGFXHAL::beginFrame()	1
-TouchGFXHAL.cpp:415:6:virtual void TouchGFXHAL::endFrame()	1
+TouchGFXHAL.cpp:280:11:virtual uint16_t* TouchGFXHAL::getTFTFrameBuffer() const	1
+TouchGFXHAL.cpp:295:6:virtual void TouchGFXHAL::setTFTFrameBuffer(uint16_t*)	1
+TouchGFXHAL.cpp:312:6:virtual void TouchGFXHAL::flushFrameBuffer(const touchgfx::Rect&)	1
+TouchGFXHAL.cpp:328:6:void TouchGFXHAL::copyFrameBufferBlockToLCD(touchgfx::Rect)	2
+TouchGFXHAL.cpp:357:6:virtual bool TouchGFXHAL::blockCopy(void*, const void*, uint32_t)	1
+TouchGFXHAL.cpp:366:6:virtual void TouchGFXHAL::configureInterrupts()	1
+TouchGFXHAL.cpp:379:6:virtual void TouchGFXHAL::enableInterrupts()	1
+TouchGFXHAL.cpp:392:6:virtual void TouchGFXHAL::disableInterrupts()	1
+TouchGFXHAL.cpp:406:6:virtual void TouchGFXHAL::enableLCDControllerInterrupt()	1
+TouchGFXHAL.cpp:416:6:virtual bool TouchGFXHAL::beginFrame()	1
+TouchGFXHAL.cpp:421:6:virtual void TouchGFXHAL::endFrame()	1
 TouchGFXHAL.hpp:36:7:TouchGFXHAL::~TouchGFXHAL()	1
 TouchGFXHAL.hpp:36:7:virtual TouchGFXHAL::~TouchGFXHAL()	1
