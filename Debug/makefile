@@ -39,9 +39,9 @@ RM := rm -rf
 -include Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM33_NTZ/non_secure/subdir.mk
 -include Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/subdir.mk
 -include Middlewares/Third_Party/FreeRTOS/Source/subdir.mk
--include Drivers/STM32L5xx_HAL_Driver/Src/subdir.mk
--include Drivers/BSP/Components/st7789v/subdir.mk
--include DISPLAY/Target/subdir.mk
+-include Drivers/STM32L5xx_HAL_Driver/subdir.mk
+-include Drivers/CMSIS/subdir.mk
+-include Drivers/BSP/Components/subdir.mk
 -include Core/Startup/subdir.mk
 -include Core/Src/subdir.mk
 -include objects.mk
@@ -107,8 +107,8 @@ all: main-build
 main-build: displaytest.elf secondary-outputs
 
 # Tool invocations
-displaytest.elf displaytest.map: $(OBJS) $(USER_OBJS) C:\Users\marco.meijer\Documents\displaytest.bak\STM32L562QEIXQ_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-g++ -o "displaytest.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m33 -T"C:\Users\marco.meijer\Documents\displaytest.bak\STM32L562QEIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="displaytest.map" -Wl,--gc-sections -static -L"C:\Users\marco.meijer\Documents\displaytest.bak\Middlewares\ST\touchgfx\lib\core\cortex_m33\gcc" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+displaytest.elf displaytest.map: $(OBJS) $(USER_OBJS) D:\Temp\displaytest\STM32L562QEIXQ_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-g++ -o "displaytest.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m33 -T"D:\Temp\displaytest\STM32L562QEIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="displaytest.map" -Wl,--gc-sections -static -L"D:\Temp\displaytest\Middlewares\ST\touchgfx\lib\core\cortex_m33\gcc" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

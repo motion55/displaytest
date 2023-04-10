@@ -70,7 +70,14 @@ osThreadId_t defaultTaskHandle;
 const osThreadAttr_t defaultTask_attributes = {
   .name = "defaultTask",
   .priority = (osPriority_t) osPriorityNormal,
-  .stack_size = 128 * 4
+  .stack_size = 256 * 4
+};
+/* Definitions for VSyncTask */
+osThreadId_t VSyncTaskHandle;
+const osThreadAttr_t VSyncTask_attributes = {
+  .name = "VSyncTask",
+  .priority = (osPriority_t) osPriorityLow,
+  .stack_size = 256 * 4
 };
 /* USER CODE BEGIN PV */
 
@@ -96,6 +103,7 @@ static void MX_UCPD1_Init(void);
 static void MX_USB_PCD_Init(void);
 static void MX_ICACHE_Init(void);
 void StartDefaultTask(void *argument);
+void StartVSyncTask(void *argument);
 
 /* USER CODE BEGIN PFP */
 
@@ -181,6 +189,9 @@ int main(void)
   /* Create the thread(s) */
   /* creation of defaultTask */
   defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
+
+  /* creation of VSyncTask */
+  VSyncTaskHandle = osThreadNew(StartVSyncTask, NULL, &VSyncTask_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -1131,12 +1142,33 @@ static void MX_GPIO_Init(void)
 void StartDefaultTask(void *argument)
 {
   /* USER CODE BEGIN 5 */
+	MX_TouchGFX_Process();
   /* Infinite loop */
   for(;;)
   {
     osDelay(1);
   }
   /* USER CODE END 5 */
+}
+
+/* USER CODE BEGIN Header_StartVSyncTask */
+void touchgfxSignalVSync(void);
+/**
+* @brief Function implementing the VSyncTask thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartVSyncTask */
+void StartVSyncTask(void *argument)
+{
+  /* USER CODE BEGIN StartVSyncTask */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(100);	//100Hz refresh
+    touchgfxSignalVSync();
+  }
+  /* USER CODE END StartVSyncTask */
 }
 
 /**

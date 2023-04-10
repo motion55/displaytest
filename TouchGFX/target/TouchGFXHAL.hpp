@@ -162,6 +162,9 @@ protected:
      * @param [in,out] adr New frame buffer address.
      */
     virtual void setTFTFrameBuffer(uint16_t* adr);
+
+private:
+    void copyFrameBufferBlockToLCD(const touchgfx::Rect rect);
 };
 
 /* USER CODE END TouchGFXHAL.hpp */
