@@ -4,7 +4,6 @@
 #include <gui_generated/screen1_screen/Screen1ViewBase.hpp>
 #include <touchgfx/Color.hpp>
 #include <images/BitmapDatabase.hpp>
-#include <texts/TextKeysAndLanguages.hpp>
 
 Screen1ViewBase::Screen1ViewBase()
 {
@@ -16,12 +15,15 @@ Screen1ViewBase::Screen1ViewBase()
     box1.setColor(touchgfx::Color::getColorFromRGB(24, 9, 230));
     add(box1);
 
-    buttonWithLabel1.setXY(0, 95);
-    buttonWithLabel1.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_PRESSED_ID));
-    buttonWithLabel1.setLabelText(touchgfx::TypedText(T___SINGLEUSE_19HU));
-    buttonWithLabel1.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    buttonWithLabel1.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    add(buttonWithLabel1);
+    analogClock1.setXY(0, 0);
+    analogClock1.setBackground(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_ANALOGCLOCK_BACKGROUNDS_SMALL_PLAIN_DARK_ID, 120, 120);
+    analogClock1.setupSecondHand(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_ANALOGCLOCK_HANDS_SMALL_SECOND_PLAIN_DARK_ID, 2, 100);
+    analogClock1.setupMinuteHand(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_ANALOGCLOCK_HANDS_SMALL_MINUTE_PLAIN_DARK_ID, 10, 87);
+    analogClock1.setMinuteHandSecondCorrection(false);
+    analogClock1.setupHourHand(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_ANALOGCLOCK_HANDS_SMALL_HOUR_PLAIN_DARK_ID, 9, 69);
+    analogClock1.setHourHandMinuteCorrection(false);
+    analogClock1.initializeTime24Hour(10, 10, 0);
+    add(analogClock1);
 }
 
 Screen1ViewBase::~Screen1ViewBase()

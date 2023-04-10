@@ -59,6 +59,6 @@ ThirdPartyIpNumber=1
 ThirdPartyIpName#0=STMicroelectronics.X-CUBE-DISPLAY.3.0.0
 
 [ThirdPartyIp#STMicroelectronics.X-CUBE-DISPLAY.3.0.0]
-header=..\Drivers\BSP\Components\st7789v\st7789v.h;..\Drivers\BSP\Components\st7789v\st7789v_reg.h;..\Drivers\BSP\Components\Common\lcd.h;
-source=..\Drivers\BSP\Components\st7789v\st7789v.c;..\Drivers\BSP\Components\st7789v\st7789v_reg.c;
+header=Drivers\BSP\Components\st7789v\st7789v.h;Drivers\BSP\Components\st7789v\st7789v_reg.h;Drivers\BSP\Components\Common\lcd.h;
+source=Drivers\BSP\Components\st7789v\st7789v.c;Drivers\BSP\Components\st7789v\st7789v_reg.c;
 

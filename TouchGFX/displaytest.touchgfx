@@ -16,34 +16,45 @@
             }
           },
           {
-            "Type": "ButtonWithLabel",
-            "Name": "buttonWithLabel1",
-            "Y": 95,
+            "Type": "AnalogClock",
+            "Name": "analogClock1",
             "Width": 240,
-            "Height": 50,
-            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
-            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.png",
-            "TextId": "__SingleUse_19HU",
-            "ReleasedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "PressedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "TextRotation": "0",
-            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_normal.json"
+            "Height": 240,
+            "FileNameBackground": "__generated\\alternate_theme_images_widgets_analogclock_backgrounds_small_plain_dark.png",
+            "RotationCenterX": 120,
+            "RotationCenterY": 120,
+            "Preset": "alternate_theme\\presets\\analogclock\\small_plain_dark.json",
+            "Easing": "Back",
+            "EasingOption": "Out",
+            "ClockHands": [
+              {
+                "Type": "HourClockHand",
+                "FileNameHandImage": "__generated\\alternate_theme_images_widgets_analogclock_hands_small_hour_plain_dark.png",
+                "RotationCenterX": 9,
+                "RotationCenterY": 69
+              },
+              {
+                "Type": "MinuteClockHand",
+                "FileNameHandImage": "__generated\\alternate_theme_images_widgets_analogclock_hands_small_minute_plain_dark.png",
+                "RotationCenterX": 10,
+                "RotationCenterY": 87
+              },
+              {
+                "Type": "SecondClockHand",
+                "FileNameHandImage": "__generated\\alternate_theme_images_widgets_analogclock_hands_small_second_plain_dark.png",
+                "RotationCenterX": 2,
+                "RotationCenterY": 100
+              }
+            ],
+            "InitialHour": 10,
+            "InitialMinute": 10
           }
         ],
         "Interactions": [
           {
             "InteractionName": "Interaction1",
             "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "buttonWithLabel1"
+              "Type": "TriggerClicked"
             },
             "Action": {
               "Type": "ActionHide"
